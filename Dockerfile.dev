@@ -1,0 +1,14 @@
+FROM node:7.10
+
+RUN mkdir /work
+WORKDIR /work
+
+COPY ./package.json ./
+
+COPY ./truffle.js ./
+
+RUN npm install
+
+RUN npm install -g truffle
+
+VOLUME /work/node_modules

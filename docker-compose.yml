@@ -1,0 +1,20 @@
+version: '2'
+
+services:
+  dev:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    command: npm start
+    volumes:
+      - .:/work
+    ports:
+      - "3000:3000"
+    depends_on:
+      - ethereum
+
+  ethereum:
+    image: trufflesuite/ganache-cli
+    command: ganache-cli -p 7545 -m "absurd nature struggle artefact garbage leaf alter fan spring ramp tell attract"
+    ports:
+      - "7545:7545"

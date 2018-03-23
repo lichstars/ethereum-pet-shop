@@ -1,0 +1,18 @@
+#!/bin/bash -eu
+
+cd $(dirname $0)/..
+
+# Clean up at the end
+trap "docker-compose down --volumes" 0
+
+# Build dev image
+docker-compose build dev
+
+# Compile contracts
+docker-compose run dev truffle compile
+
+# deploy contracts to the blockchain
+docker-compose run dev truffle migrate --network development
+
+# Give a shell or run what's passed in as arguments
+docker-compose run --rm --service-ports dev npm start
