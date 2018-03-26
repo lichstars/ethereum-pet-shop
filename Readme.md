@@ -11,6 +11,7 @@ There are a few options available to see transactions hitting the blockchain. Tr
 
 One final thing you'll need is something like [Metamask](https://metamask.io/). This will allow you to interact with the the app. This [page](https://www.quora.com/What-is-MetaMask) explains the purpose of Metamask.
 
+I also want to check out [this zombie exercise](https://cryptozombies.io/) at some stage.
 
 ### Local Development
 - Dependencies
